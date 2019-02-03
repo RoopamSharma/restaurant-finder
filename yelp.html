@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display Best Restaurants on a Map</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="yelp.js"></script>
+	<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 500px;
+		width: 600px;
+		margin : 20px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  .item{
+		clear:left;
+		float:left;
+		margin:10px;
+		border-bottom: solid gray 1px;
+	  }
+	  .img{
+		float:left;
+		width:200px;
+		height:100px;
+		margin:10px;
+	  }
+	  .ratings{
+		float:left;
+		margin:10px;
+	  }
+	  .title{
+		float:left;
+		margin:10px;
+	  }
+    </style>
+  </head>
+  <body onload="initMap();">
+    <form>
+       <label>Search Terms: <input type="text" id="search"/></label>
+       <input type="button" onclick="sendRequest();" value="Find"/>
+    </form>
+	<div id="map"></div>
+    <div id="output">This will contain the output</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AF-2YR3KtuLEmIbvw_b3ELjvZkg0BI4&callback=initMap&libraries=geometry"
+    async defer></script>
+  </body>
+</html>
